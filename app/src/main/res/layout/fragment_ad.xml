@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="adFragment"
+            type="com.ghy.componentproject.model.AdFragmentModel" />
+        <variable
+            name="position"
+            type="int" />
+    </data>
+
+    <RelativeLayout
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.AdMVVMFragment">
+
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            image="@{adFragment.imgUrl}"
+            ></ImageView>
+
+        <TextView
+            android:padding="3dp"
+            android:text="3秒后跳过"
+            android:id="@+id/jump"
+            android:background="@drawable/jump_shape"
+            android:layout_margin="15dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           ></TextView>
+
+    </RelativeLayout>
+</layout>

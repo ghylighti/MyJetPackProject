@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WeChatStepView">
+        <attr name="mText" format="string"/>
+        <attr name="innerColor" format="color"/>
+        <attr name="outerColor" format="color"/>
+        <attr name="mTextColor" format="color"/>
+        <attr name="mTextSize" format="dimension"/>
+        <attr name="paintSize" format="integer"></attr>
+        <attr name="paintOuterSize" format="integer"></attr>
+    </declare-styleable>
+
+</resources>

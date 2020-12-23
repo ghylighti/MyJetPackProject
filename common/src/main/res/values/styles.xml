@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+
+
+    <style name="Default" parent="Theme.AppCompat.Light">
+
+        <item name="android:windowBackground">@android:color/white</item>
+
+        <!--        标题栏-->
+        <item name="colorPrimary">@android:color/holo_red_light</item>
+        <!--        状态栏-->
+        <item name="colorPrimaryDark">@android:color/holo_red_dark</item>
+        <!--        强调色-->
+        <item name="colorAccent">@android:color/holo_blue_bright</item>
+        <item name="backgroundColor">@android:color/white</item>
+
+
+    </style>
+    <style name="Default.DarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="backgroundColor">@android:color/white</item>
+        <!--        标题栏-->
+        <item name="colorPrimary">@android:color/holo_red_light</item>
+        <!--        状态栏-->
+        <item name="colorPrimaryDark">@android:color/holo_green_light</item>
+
+        <!--        强调色-->
+        <item name="colorAccent">@android:color/holo_blue_bright</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+
+</resources>

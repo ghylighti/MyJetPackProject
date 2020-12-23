@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ComponentProject</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="author">作者：</string>
+    <string name="title">标题：</string>
+    <string name="desc">详情：</string>
+</resources>

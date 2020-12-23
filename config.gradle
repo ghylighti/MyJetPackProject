@@ -1,0 +1,112 @@
+ext {
+
+    isRelease=true;
+    url=[
+//            "key":"ce93fe3fdedd4f52af5bc9d971e1490c",
+            "debug" : " https://wanandroid.com/",
+            "release" : "https://wanandroid.com/",
+    ]
+    appId=[
+            "detail":"detail",
+            "myView":"myView",
+
+    ]
+    //android开发版本配置
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.0",
+            applicationId    : "com.fly.tour",
+            minSdkVersion    : 16,
+            targetSdkVersion : 30,
+            versionCode      : 1,
+            versionName      : "1.0",
+    ]
+    //version配置
+    versions = [
+            "support-version": "1.2.0",
+            "reclycler-version":"1.1.0",
+            "swiperefreshlayout-version":"1.1.0",
+
+            "junit-version"  : "4.12",
+            "fragment_version" : "1.2.5",
+            "material":"1.1.0-beta01",
+    ]
+    //support配置
+    support = [
+            "constraint-layout"       : "1.0.0-beta2",
+            "swiperefreshlayout"      :"androidx.swiperefreshlayout:swiperefreshlayout:${versions[ "swiperefreshlayout-version"]}",
+            "material"                :"com.google.android.material:material:${versions["material"]}",
+            'appcompat'               : "androidx.appcompat:appcompat:${versions["support-version"]}",
+            'recyclerview'            : "androidx.recyclerview:recyclerview:${versions["reclycler-version"]}",
+            'androidx.fragment:fragmen': "com.android.support:support-fragment:${versions["fragment_version"]}",
+            'design'                  : "com.android.support:design:${versions["support-version"]}",
+            'animated-vector-drawable': "com.android.support:animated-vector-drawable:${versions["support-version"]}",
+            'junit'                   : "junit:junit:${versions["junit-version"]}",
+            'viewpager2'               :"androidx.viewpager2:viewpager2:1.0.0"
+    ]
+    dependencies_version = [
+            "lifecycle_version"   : "2.2.0",
+            "viewmodel_savedstate": "1.0.0",
+            "mmkv"                : "1.2.4",
+            "room_version"        : "2.2.5",
+
+    ]
+    //依赖第三方配置
+    dependencies = [
+            //rxjava
+            "rxjava"                : "io.reactivex.rxjava2:rxjava:2.2.3",
+            "rxandroid"             : "io.reactivex.rxjava2:rxandroid:2.1.0",
+            //rx系列与View生命周期同步
+            "rxlifecycle"           : "com.trello.rxlifecycle2:rxlifecycle:2.2.2",
+            "rxlifecycle-components": "com.trello.rxlifecycle2:rxlifecycle-components:2.2.2",
+            //rxbinding
+            "rxbinding"             : "com.jakewharton.rxbinding2:rxbinding:2.1.1",
+            //rx 6.0权限请求
+            "rxpermissions"         : "com.github.tbruyelle:rxpermissions:0.10.2",
+            //network
+            "okhttp"                : "com.squareup.okhttp3:okhttp:3.10.0",
+            "retrofit"              : "com.squareup.retrofit2:retrofit:2.4.0",
+            "converter-gson"        : "com.squareup.retrofit2:converter-gson:2.4.0",
+            "adapter-rxjava"        : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
+            "logging-interceptor"   : "com.squareup.okhttp3:logging-interceptor:3.9.1",
+            "LoggingInterceptor"    : "com.github.ihsanbal:LoggingInterceptor:3.1.0-rc5",
+
+            //glide图片加载
+            "glide"                 : "com.github.bumptech.glide:glide:4.11.0",
+            "glide-compiler"        : "com.github.bumptech.glide:compiler:4.11.0",
+            //json解析
+            "gson"                  : "com.google.code.gson:gson:2.8.5",
+
+            //Google AAC
+            "lifecycle-extensions"  : "android.arch.lifecycle:extensions:1.1.1",
+            "lifecycle-compiler"    : "android.arch.lifecycle:compiler:1.1.1",
+            //阿里路由框架
+            "arouter"           : "com.alibaba:arouter-api:1.5.1",
+            "aroutercompiler"      : "com.alibaba:arouter-compiler:1.5.1",
+            "eventbus"              : "org.greenrobot:eventbus:3.1.1",
+            "dagger"                : "com.google.dagger:dagger:2.13",
+            "dagger-compiler"       : "com.google.dagger:dagger-compiler:2.13",
+            "stetho"                : "com.facebook.stetho:stetho:1.3.1",
+            "MultiImageSelector"    : "com.github.lovetuzitong:MultiImageSelector:1.2",
+
+            //Jetpack
+            "viewmodel"             : "androidx.lifecycle:lifecycle-viewmodel:${dependencies_version["lifecycle_version"]}",
+            "viewmodel_savedsate"   : "androidx.lifecycle:lifecycle-viewmodel-savedstate:${dependencies_version["viewmodel_savedstate"]}",
+            // LiveData
+            "livedata"              : "androidx.lifecycle:lifecycle-livedata:${dependencies_version["lifecycle_version"]}",
+            //mmkv
+            "mmkv"                  : "com.tencent:mmkv-static:${dependencies_version["mmkv"]}",
+
+            //room
+            "room-runtime"          : "androidx.room:room-runtime:${dependencies_version["room_version"]}",
+            "room-compiler"         : "androidx.room:room-compiler:${dependencies_version["room_version"]}",
+            "room-rxjava2"          : "androidx.room:room-rxjava2:${dependencies_version["room_version"]}",
+            "room-runtime"          : "androidx.room:room-guava:${dependencies_version["room_version"]}",
+            "room-guava"            : "androidx.room:room-testing:${dependencies_version["room_version"]}",
+
+    ]
+
+
+}
+
+

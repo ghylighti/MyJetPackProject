@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ghy.myview">
+    <application>
+
+       <activity android:name=".activity.BubbleActivity"></activity>
+        <activity android:name=".activity.LoveActivity"></activity>
+        <activity android:name=".activity.ClickDrawActivity"></activity>
+        <activity android:name=".activity.FrameListActivity"></activity>
+        <activity android:name=".activity.ClipTextActivity"></activity>
+    </application>
+</manifest>

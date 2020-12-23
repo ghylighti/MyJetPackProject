@@ -1,0 +1,8 @@
+include ':lifecycle-plugin'
+include ':myView'
+rootProject.name='ComponentProject'
+include ':app'
+include ':api'
+include ':common'
+include ':dao'
+include ':detail'

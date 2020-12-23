@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data >
+        <variable
+            name="test"
+            type="com.ghy.componentproject.model.AuthorBookModel" />
+        <variable
+            name="position"
+            type="int" />
+    </data>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:measureAllChildren="true"
+        app:cardElevation="30dp"
+        app:cardCornerRadius="5dp"
+        >
+
+        <LinearLayout
+
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <MyView.RoundImageView
+                app:radius="10"
+                android:background="@drawable/ic_launcher_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></MyView.RoundImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text='@{@string/author+test.data.get(position).author}'></TextView>
+            <TextView
+                android:text="@{@string/title+test.Data.get(position).title}"
+                android:id="@+id/text_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </TextView>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

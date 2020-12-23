@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    android.buildFeatures.dataBinding=true
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        buildConfigField("boolean","isRelease",String.valueOf(isRelease))
+
+
+
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            if (isModule.toBoolean()) {
+            } else {
+                resources {
+                    //正式版本时，排除debug文件夹下所有调试文件
+                    exclude 'src/debug/*'
+                }
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':api')
+    api project(':dao')
+
+    api rootProject.ext.dependencies.viewmodel
+    api rootProject.ext.dependencies.livedata
+    api rootProject.ext.dependencies.viewmodel_savedsate
+    api rootProject.ext.dependencies.glide
+    api rootProject.ext.dependencies.mmkv
+    api rootProject.ext.dependencies.arouter
+    api rootProject.ext.support.viewpager2
+    api rootProject.ext.support.appcompat
+    api rootProject.ext.support.material
+    api rootProject.ext.support.swiperefreshlayout
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation'org.ow2.asm:asm:7.1'
+    implementation'org.ow2.asm:asm-commons:7.1'
+
+}

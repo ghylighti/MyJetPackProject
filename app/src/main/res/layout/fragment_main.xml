@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+    <variable
+        name="mainVM"
+        type="com.ghy.componentproject.model.FMainModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_gravity="center"
+                android:id="@+id/toolbar"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:title="新项目"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:background="@drawable/tool_search_selector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="20sp"
+                    android:id="@+id/title_text"
+                    android:visibility="gone"
+                    ></androidx.appcompat.widget.AppCompatTextView>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            android:name="com.ghy.componentproject.fragment.MyNavHostFragment"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/main_navi"
+            android:id="@+id/main_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            ></androidx.fragment.app.FragmentContainerView>
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_gravity="bottom"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+            app:menu="@menu/main_fragment_menu"
+            app:itemTextColor="@android:color/darker_gray"
+            android:id="@+id/bottom_navigation_view"
+            ></com.google.android.material.bottomnavigation.BottomNavigationView>
+<!--        <FrameLayout-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:background="@android:color/holo_red_dark"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"-->
+<!--            app:menu="@menu/main_fragment_menu"-->
+<!--            app:itemTextColor="@android:color/darker_gray"-->
+<!--            android:id="@+id/bottom_navigation_view"-->
+<!--            ></FrameLayout>-->
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

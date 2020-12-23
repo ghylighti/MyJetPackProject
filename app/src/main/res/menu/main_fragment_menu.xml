@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item android:icon="@drawable/main_trip_selector"  android:title="最新项目" android:id="@+id/trip_menu"></item>
+        <item android:icon="@drawable/main_public_selector"  android:title="公众号" android:id="@+id/public_menu"></item>
+        <item android:icon="@drawable/main_find_selector"  android:title="发现" android:id="@+id/find_menu"></item>
+
+</menu>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.ghy.myview.activity.view.WeChatStepView
+        android:id="@+id/wcView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:innerColor="@color/red"
+        app:mText="4000"
+        app:mTextColor="@color/red"
+        app:outerColor="@color/red"
+        app:paintSize="30"
+        app:paintOuterSize="30"
+        app:mTextSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+</RelativeLayout>

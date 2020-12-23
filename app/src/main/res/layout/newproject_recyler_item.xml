@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data >
+        <variable
+            name="projectVm"
+            type="com.ghy.componentproject.model.ProjectModel" />
+        <variable
+            name="position"
+            type="int" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="5dp"
+        android:layout_margin="5dp"
+        app:contentPadding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+
+                <MyView.RoundImageView
+                    imagea="@{projectVm.projectData.get(position).envelopePic}"
+                    android:id="@+id/image"
+                    android:scaleType="centerInside"
+                    android:background="@mipmap/ic_launcher"
+                    app:radius="40"
+                    android:layout_width="?actionBarSize"
+                    android:layout_height="?actionBarSize"
+                    ></MyView.RoundImageView>
+                <TextView
+                    android:id="@+id/desc"
+                    android:textSize="13sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text='@{@string/desc+projectVm.projectData.get(position).desc}'></TextView>
+
+            </LinearLayout>
+            <ImageView
+                android:transitionName="test"
+                android:id="@+id/detail_iv"
+                android:layout_marginTop="10dp"
+                imagea="@{projectVm.projectData.get(position).envelopePic}"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"></ImageView>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
