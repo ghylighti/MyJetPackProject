@@ -18,6 +18,7 @@ public class Example2 {
     private void fun1() {
         System.out.println("fun1");
         System.out.println("开发功能1");
+        System.out.println("开发功能2");
     }
     private void testFun2() {
         System.out.println("testFun2");
@@ -26,7 +27,7 @@ public class Example2 {
     }
 
     private void bug() {
-        System.out.println("bug");
+        System.out.println("修复bug");
     }
 
 
