@@ -26,6 +26,7 @@ public class Example2 {
         System.out.println("testFun2");
         System.out.println("开发功能模块2.1");
         bug();
+        System.out.println("开发功能模块2.2");
     }
 
     private void bug() {
