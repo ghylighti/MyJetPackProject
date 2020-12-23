@@ -10,6 +10,11 @@ public class Example2 {
     }
 
     private void fun2() {
+        testFun2();
+    }
+
+    private void testFun2() {
+        System.out.println("testFun2");
     }
 
 
