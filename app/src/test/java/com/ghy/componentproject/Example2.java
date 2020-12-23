@@ -8,6 +8,12 @@ public class Example2 {
     {
       fun1();
       fun2();
+      fun3();
+    }
+
+    private void fun3() {
+        System.out.println("fun1");
+        System.out.println("开发功能3");
     }
 
     private void fun2() {
