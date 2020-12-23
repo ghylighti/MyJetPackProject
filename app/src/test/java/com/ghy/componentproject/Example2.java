@@ -21,7 +21,7 @@ public class Example2 {
     }
 
     private void bug() {
-        System.out.println("bug");
+        System.out.println("修复bug");
     }
 
 
