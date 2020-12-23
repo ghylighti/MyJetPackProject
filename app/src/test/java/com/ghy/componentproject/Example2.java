@@ -19,6 +19,8 @@ public class Example2 {
         System.out.println("开发功能模块2.1");
         bug();
         System.out.println("开发功能模块2.2");
+        System.out.println("开发功能模块完成");
+
     }
 
     private void bug() {
