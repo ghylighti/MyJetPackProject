@@ -16,6 +16,7 @@ public class Example2 {
         System.out.println("开发功能3");
         System.out.println("开发功能3.1");
         System.out.println("开发功能3.2");
+        System.out.println("开发功能3.2");
     }
 
     private void fun2() {
