@@ -9,6 +9,7 @@ public class Example2 {
       fun1();
       fun2();
       fun3();
+      fun4();
     }
 
     private void fun3() {
@@ -18,7 +19,10 @@ public class Example2 {
         System.out.println("开发功能3.2");
         System.out.println("开发功能3完成");
     }
+    private void fun4() {
+        System.out.println("远程提交测试");
 
+    }
     private void fun2() {
         testFun2();
 
