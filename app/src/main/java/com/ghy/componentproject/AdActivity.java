@@ -25,10 +25,14 @@ import com.ghy.componentproject.fragment.MainMVVMFragment;
 import com.ghy.componentproject.model.AdActivityModel;
 
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
+
 @Route(path = "/activity/ad")
-public class AdActivity extends BaseMVVMActivity<AdActivityModel, ActivityAdBinding> implements Handler.Callback {
+public class AdActivity extends BaseMVVMActivity<AdActivityModel, ActivityAdBinding> implements Handler.Callback,ThreadInterface {
     private ViewPager2 viewPager2;
     private List<Fragment> fragmentList = new ArrayList<>();
     private int jump = 0;
@@ -41,6 +45,7 @@ public class AdActivity extends BaseMVVMActivity<AdActivityModel, ActivityAdBind
     protected void onResume() {
         if (thread.getState() == Thread.State.NEW)
             thread.start();
+        Log.i("onResume",viewPager2.getWidth()+"");
         super.onResume();
     }
 
@@ -169,5 +174,63 @@ public class AdActivity extends BaseMVVMActivity<AdActivityModel, ActivityAdBind
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        git();
+    }
+
+    @Override
+    public void setI(int i) {
+        Log.e("线程测试","最终结果"+m1.getI()+"");
+    }
+
+
+    class mThread implements Runnable {
+        public int getI() {
+            return i;
+        }
+
+        public void setThreadInterface(ThreadInterface threadInterface) {
+            this.threadInterface = threadInterface;
+        }
+       
+        private ThreadInterface threadInterface;
+        private volatile int  i = 0;
+        private int last;
+        @Override
+        public void run() {
+
+            while (true) {
+                    synchronized (this)
+                    {
+                        if (i < 500) {
+                            i++;
+                            last=i;
+                            Log.e("线程测试",Thread.currentThread().getName() + "   " + i);
+                        } else {
+
+                            break;
+                        }
+
+                    }
+
+
+            }
+            threadInterface.setI(last);
+        }
+
+    }
+
+    mThread m1 = new mThread();
+    public void git() {
+        m1.setThreadInterface(this);
+        Thread t1 = new Thread(m1, "线程1");
+        Thread t2 = new Thread(m1, "线程2");
+        Thread t3 = new Thread(m1, "线程3");
+        Thread t4 = new Thread(m1, "线程4");
+
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+
     }
 }

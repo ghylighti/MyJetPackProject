@@ -17,6 +17,7 @@ public class FindMVVMFragment extends BaseMVVMFragment<FindModel, FragmentViewBi
         onClick(mBinding.flowWord);
         onClick(mBinding.clickGood);
         onClick(mBinding.stackGroup);
+        onClick(mBinding.viewVpager);
     }
 
     @Override
@@ -57,6 +58,10 @@ public class FindMVVMFragment extends BaseMVVMFragment<FindModel, FragmentViewBi
                     case R.id.stack_group:
                         Log.i("tsttttt","/view/stack");
                         ARouter.getInstance().build("/view/stack").navigation(getContext());
+                        break;
+                    case R.id.view_vpager:
+                        Log.i("tsttttt","/view/vpager");
+                        ARouter.getInstance().build("/view/vpager").navigation(getContext());
                         break;
                 }
             }

@@ -10,6 +10,7 @@ import com.ghy.common.BuildConfig;
 import com.ghy.dao.SingleDataBase;
 import com.ghy.dao.entity.DataEntity;
 
+import com.squareup.leakcanary.LeakCanary;
 import com.tencent.mmkv.MMKV;
 
 import java.util.List;
@@ -33,6 +34,12 @@ public class App extends Application {
             ARouter.openDebug();
         }
         ARouter.init(this);
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
     }
 
     @Override

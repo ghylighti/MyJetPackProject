@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Aidl Application</string>
+    <string name="tips">"还没和服务建立连接"</string>
+</resources>

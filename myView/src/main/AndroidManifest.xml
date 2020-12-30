@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ghy.myview">
+    <permission android:name="android.permission.FOREGROUND_SERVICE"></permission>
     <application>
 
        <activity android:name=".activity.BubbleActivity"></activity>
@@ -8,5 +9,6 @@
         <activity android:name=".activity.ClickDrawActivity"></activity>
         <activity android:name=".activity.FrameListActivity"></activity>
         <activity android:name=".activity.ClipTextActivity"></activity>
+        <activity android:name=".activity.VPagerActivity"></activity>
     </application>
 </manifest>

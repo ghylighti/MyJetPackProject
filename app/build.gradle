@@ -5,6 +5,7 @@ android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     android.buildFeatures.dataBinding=true
     defaultConfig {
+        multiDexEnabled true
         applicationId "com.ghy.componentproject"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion

@@ -22,6 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:title="新项目"
+                app:logo="@mipmap/ic_launcher_round"
                 >
                 <androidx.appcompat.widget.AppCompatTextView
                     android:background="@drawable/tool_search_selector"
@@ -53,7 +54,8 @@
             android:background="@android:color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:labelVisibilityMode="auto"
             app:menu="@menu/main_fragment_menu"
             app:itemTextColor="@android:color/darker_gray"
             android:id="@+id/bottom_navigation_view"

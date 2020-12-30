@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.ghy.api.dto.authorBookBean.AuthorBookData;
 import com.ghy.common.base.BaseMVVMFragment;
 
@@ -116,6 +117,15 @@ public class TowMVVMFragment extends BaseMVVMFragment<AuthorBookModel, FragmentT
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    if (getActivity() != null){
+                        Glide.with(getActivity()).resumeRequests();//恢复Glide加载图片
+                    }
+                }else {
+                    if (getActivity() != null){
+                        Glide.with(getActivity()).pauseRequests();//禁止Glide加载图片
+                    }
+                }
             }
 
             @Override

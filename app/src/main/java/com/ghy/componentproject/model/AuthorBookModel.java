@@ -16,9 +16,11 @@ import com.ghy.api.dto.authorBookBean.AuthorBookRootBean;
 import com.ghy.api.dto.newProjectRootBean.RespDTO;
 import com.ghy.api.http.RxAdapter;
 import com.ghy.common.base.BaseModel;
+import com.ghy.componentproject.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import MyView.RefreshCallBack;
 
@@ -27,8 +29,9 @@ import io.reactivex.disposables.Disposable;
 
 public class AuthorBookModel extends BaseModel  {
 
+    private Random random=new Random();
 
-
+    private int[] pics=new int[]{R.mipmap.kn_1,R.mipmap.kn_2,R.mipmap.kn_3,R.mipmap.kn_4,R.mipmap.kn_5};
 
     public AuthorBookModel(@NonNull Application application, SavedStateHandle stateHandle) {
         super(application, stateHandle);
@@ -58,6 +61,7 @@ public class AuthorBookModel extends BaseModel  {
 
             @Override
             public void onNext(RespDTO<AuthorBookDatas> authorBookDatasRespDTO) {
+                initPics(authorBookDatasRespDTO.data.getData());
                 if(page>0)
                 {
                     List<AuthorBookData> value = getData().getValue();
@@ -73,15 +77,26 @@ public class AuthorBookModel extends BaseModel  {
 
             @Override
             public void onError(Throwable e) {
+                Log.i("TestVm111","onError"+e.getLocalizedMessage());
                 Complete();
             }
 
             @Override
             public void onComplete() {
+                Log.i("TestVm111","onComplete");
               Complete();
 
             }
         });;
+    }
+
+    private void initPics(List<AuthorBookData> data) {
+        Log.i("TestVm111","initPics");
+        for (int i=0;i<data.size();i++)
+        {
+            Log.i("TestVm111","initPics"+"   "+pics[random.nextInt(5)]);
+            data.get(i).setLurl(pics[random.nextInt(5)]);
+        }
     }
 
     @Override

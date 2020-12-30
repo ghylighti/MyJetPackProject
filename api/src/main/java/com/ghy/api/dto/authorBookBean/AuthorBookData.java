@@ -45,6 +45,16 @@ public class AuthorBookData implements Serializable {
     private int userId;
     private int visible;
     private int zan;
+
+    public int getLurl() {
+        return lurl;
+    }
+
+    public void setLurl(int mUrl) {
+        this.lurl = mUrl;
+    }
+
+    private int lurl;
     public void setApkLink(String apkLink) {
          this.apkLink = apkLink;
      }

@@ -20,6 +20,7 @@ import com.ghy.detail.activity.DetailActivity;
 import MyView.MvvMView;
 
 public class NewProcejtView extends MvvMView<NewprojectRecylerItemBinding, ProjectModel> {
+
     public NewProcejtView(Context context) {
         super(context);
     }
